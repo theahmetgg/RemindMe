@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+  ClerkProvider} from "@clerk/nextjs";
 import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar";
 import ThemeProvider from "@/providers/ThemeProvider";
@@ -41,8 +36,9 @@ export default function RootLayout({
               <NavBar />
 
               <Separator />
-
-              {children}
+              <main className="flex flex-grow w-full justify-center dark:bg-neutral-950 items-center">
+                {children}
+              </main>
             </div>
           </ThemeProvider>
         </body>
